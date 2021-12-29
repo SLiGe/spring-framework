@@ -1,6 +1,7 @@
 description = "Spring Zjl"
 
 apply plugin: "kotlin"
+apply plugin: "groovy"
 
 group 'org.springframework.zjl'
 version '6.0.0-SNAPSHOT'
@@ -9,11 +10,9 @@ version '6.0.0-SNAPSHOT'
 dependencies {
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine") // for @Inject TCK
     testFixturesApi("org.junit.jupiter:junit-jupiter-api")
-    api(project(":spring-aop"))
-    api(project(":spring-expression"))
-    api(project(":spring-beans"))
     api(project(":spring-context"))
-    api(project(":spring-core"))
-    optional(project(":spring-context-support"))  // for FreeMarker support
     optional(project(":spring-oxm"))
+    testImplementation(testFixtures(project(":spring-beans")))
+    testImplementation(testFixtures(project(":spring-core")))
+    testImplementation(testFixtures(project(":spring-context")))
 }
