@@ -75,7 +75,9 @@ final class PostProcessorRegistrationDelegate {
 		Set<String> processedBeans = new HashSet<>();
 
 		if (beanFactory instanceof BeanDefinitionRegistry registry) {
+			//一般的实现BeanFactoryPostProcessor接口的类
 			List<BeanFactoryPostProcessor> regularPostProcessors = new ArrayList<>();
+			//实现BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor的类
 			List<BeanDefinitionRegistryPostProcessor> registryProcessors = new ArrayList<>();
 
 			for (BeanFactoryPostProcessor postProcessor : beanFactoryPostProcessors) {
