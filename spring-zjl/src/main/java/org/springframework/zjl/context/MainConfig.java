@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @author zJiaLi
  * @since 2021-12-29 15:10
  */
-@ComponentScan(basePackages = {"org.springframework.zjl.context"})
+@ComponentScan(basePackages = {"org.springframework.zjl.context","org.springframework.zjl.event"})
 @Configuration
 public class MainConfig implements BeanNameAware {
 
