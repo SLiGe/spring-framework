@@ -3,6 +3,7 @@ package org.springframework.zjl.context;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
  */
 @ComponentScan(basePackages = {"org.springframework.zjl.context","org.springframework.zjl.event"})
 @Configuration
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class MainConfig implements BeanNameAware {
 
 	@Override
