@@ -10,8 +10,9 @@ version '6.0.0-SNAPSHOT'
 dependencies {
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine") // for @Inject TCK
     testFixturesApi("org.junit.jupiter:junit-jupiter-api")
-    api(project(":spring-context"))
+    optional(project(":spring-context"))
     optional(project(":spring-oxm"))
+    optional("org.aspectj:aspectjweaver")
     testImplementation(testFixtures(project(":spring-beans")))
     testImplementation(testFixtures(project(":spring-core")))
     testImplementation(testFixtures(project(":spring-context")))
